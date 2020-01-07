@@ -31,7 +31,7 @@ router.post('/',async (req,res) => {
 
         const token = jwt.sign({_id: newUser._id},config.get('jwtSecret'));
 
-        res.send({token});
+        res.json({token});
     } catch (err) {
         console.error(err.message);
         res.status(500).send('Server error');
