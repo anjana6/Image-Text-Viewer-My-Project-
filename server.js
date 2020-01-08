@@ -1,5 +1,6 @@
 const express = require('express');
 const connectDB  = require('./config/db');
+const cors = require('cors');
 // const multer = require('multer');
 // const upload = multer();
 const fileupload = require('express-fileupload');
@@ -9,6 +10,7 @@ const app = express();
 connectDB();
 
 app.use(express.json({extended: false}));
+app.use(cors());
 // app.use(upload.array());
 // app.use(express.static('public'));
 app.use(fileupload());
